@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class JenkinsController {
 
     @GetMapping("/getSt")
-    public String getSt(){121221
+    public String getSt(){
         return "成功";
     }
 }
