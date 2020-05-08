@@ -14,6 +14,8 @@ pipeline {
         }
        stage('Deliver') { 
             steps {
+	sh 'pwd'
+	sh 'cd /var/jenkins_home/workspace/TestPipine'
 	sh 'chmod 777 build.sh'
                 sh './build.sh' 
             }
