@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3-alpine' 
-            args '-v /root/.m2:/root/.m2' 
+            args '-v /root/.m2:/root/.m2 -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker'
         }
     }
     stages {
@@ -12,15 +12,12 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-    }
-
-    stages {
-           stage('Deliver') {
-                steps {
-    	sh 'chmod 777 build.sh'
-                    sh './build.sh'
-                }
+       stage('Deliver') {
+            steps {
+	sh 'chmod 777 build.sh'
+                sh './build.sh'
             }
         }
+    }
 
 }
