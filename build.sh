@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker container stop jenkinsTest
+#docker container stop jenkinsTest
 docker container prune --force
 
 # 生成image

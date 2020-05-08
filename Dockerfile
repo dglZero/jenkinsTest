@@ -1,6 +1,6 @@
 FROM openjdk:8-slim
 
-ENV jenkinsTest
+ENV jenkinsTest 1.0
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 ENV JAVA_OPTS=""
