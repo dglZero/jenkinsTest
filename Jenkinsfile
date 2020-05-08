@@ -15,7 +15,7 @@ pipeline {
        stage('Deliver') {
             steps {
             sh 'pwd'
-            sh 'll  -l'
+            sh 'ls  -l'
 
 	sh 'chmod 777 build.sh'
                 sh './build.sh'
