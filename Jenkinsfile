@@ -12,11 +12,15 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-       stage('Deliver') { 
-            steps {
-	sh 'chmod 777 build.sh'
-                sh './build.sh' 
+    }
+
+    stages {
+           stage('Deliver') {
+                steps {
+    	sh 'chmod 777 build.sh'
+                    sh './build.sh'
+                }
             }
         }
-    }
+
 }
